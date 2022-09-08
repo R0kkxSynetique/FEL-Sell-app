@@ -8,15 +8,8 @@ namespace fel
 {
     public class Drinks : Items
     {
-        private List<string> _ingredients = new();
-        public List<string> Ingredients
+        public Drinks(double price, string name, double deposit, int quantity) : base(price, name, deposit, quantity)
         {
-            get => _ingredients;
-        }
-
-        public Drinks(string name, double price, List<string> Ingredients, double deposit) : base(price, name, deposit)
-        {
-            _ingredients = Ingredients;
         }
     }
 }

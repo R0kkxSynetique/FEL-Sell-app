@@ -8,6 +8,7 @@ namespace fel
         protected double _price;
         protected string _name;
         protected double _deposit;
+        protected int _quantity;
 
         public double Price
         {
@@ -21,8 +22,13 @@ namespace fel
         {
             get => _deposit;
         }
+        public int Quantity
+        {
+            get => _quantity;
+            set => _quantity = value;
+        }
 
-        public Items(double Price, string Name, double Deposit)
+        public Items(double Price, string Name, double Deposit, int Quantity)
         {
             _price = Price;
             _name = Name;

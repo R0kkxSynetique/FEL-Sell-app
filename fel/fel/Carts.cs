@@ -9,38 +9,29 @@ namespace fel
     public class Carts
     {
         public List<Items> Cart;
-        public double Total;
-
-        public Carts()
+        public double Total
         {
-            Cart = new();
+            get => _total;
         }
 
-        public void AddToCart(Items item)
-        {
-            Cart.Add(item);
-        }
+        private double _total = 0;
 
-        public void RemoveFromCart(Items item)
+        public Carts(List<Items> items)
         {
-            Cart.Remove(item);
-        }
-
-        public void CleanCart()
-        {
-            Cart.Clear();
-            Total = 0;
-        }
-
-        private void AddToTotal(Items item)
-        {
-            Total += item.Price;
+            Cart = new(items);
         }
 
         public double CalculateTotal()
         {
-            Cart.ForEach(AddToTotal);
-            return Total;
+            double subtotal = 0;
+            foreach(Items item in Cart)
+            {
+                subtotal += item.Price * item.Quantity + item.Deposit * item.Quantity;
+            }
+
+            _total = subtotal;
+
+            return _total;
         }
     }
 }

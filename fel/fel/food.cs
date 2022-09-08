@@ -14,7 +14,7 @@ namespace fel
             get => _ingredients;
         }
 
-        public Food(string name, double price, List<string> Ingredients, double deposit) : base(price, name, deposit)
+        public Food(double price, string name, double deposit, List<string> Ingredients, int quantity) : base(price, name, deposit, quantity)
         {
             _ingredients = Ingredients;
         }
