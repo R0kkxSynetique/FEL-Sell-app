@@ -185,7 +185,7 @@ namespace fel_gui
             switch (e.KeyCode)
             {
                 case Keys.NumPad1 or Keys.D1:
-                    btnSoup_MouseDown(sender, new (MouseButtons.Left, 1, 0, 0, 0));
+                    btnSoup_MouseDown(sender, new(MouseButtons.Left, 1, 0, 0, 0));
                     break;
                 case Keys.NumPad2 or Keys.D2:
                     btnSalade_MouseDown(sender, new(MouseButtons.Left, 1, 0, 0, 0));
@@ -219,5 +219,6 @@ namespace fel_gui
                     break;
             }
         }
+
     }
 }
