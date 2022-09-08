@@ -82,6 +82,8 @@ namespace fel_gui
                 items.Quantity = 0;
             }
             lstResume.Items.Clear();
+            txtTotal.Clear();
+            this.ActiveControl = null;
         }
 
         private void mouseDownHandler(MouseEventArgs e, Items item)
@@ -183,39 +185,38 @@ namespace fel_gui
             switch (e.KeyCode)
             {
                 case Keys.NumPad1 or Keys.D1:
-                    btnSoup_MouseDown(sender, );
+                    btnSoup_MouseDown(sender, new (MouseButtons.Left, 1, 0, 0, 0));
                     break;
                 case Keys.NumPad2 or Keys.D2:
-                    btnSalade.PerformClick();
+                    btnSalade_MouseDown(sender, new(MouseButtons.Left, 1, 0, 0, 0));
                     break;
                 case Keys.NumPad3 or Keys.D3:
-                    btnFrying.PerformClick();
+                    btnFrying_MouseDown(sender, new(MouseButtons.Left, 1, 45, 45, 0));
                     break;
                 case Keys.NumPad4 or Keys.D4:
-                    btnSmokedFish.PerformClick();
+                    btnSmokedFish_MouseDown(sender, new(MouseButtons.Left, 1, 45, 45, 0));
                     break;
                 case Keys.NumPad5 or Keys.D5:
-                    btnWine.PerformClick();
+                    btnWine_MouseDown(sender, new(MouseButtons.Left, 1, 45, 45, 0));
                     break;
                 case Keys.NumPad6 or Keys.D6:
-                    btnBeer.PerformClick();
+                    btnBeer_MouseDown(sender, new(MouseButtons.Left, 1, 45, 45, 0));
                     break;
                 case Keys.NumPad7 or Keys.D7:
-                    btnMineral.PerformClick();
+                    btnMineral_MouseDown(sender, new(MouseButtons.Left, 1, 45, 45, 0));
                     break;
                 case Keys.NumPad8 or Keys.D8:
-                    btnCoffee.PerformClick();
+                    btnCoffee_MouseDown(sender, new(MouseButtons.Left, 1, 45, 45, 0));
                     break;
                 case Keys.NumPad9 or Keys.D9:
-                    btnGlass.PerformClick();
+                    btnGlass_MouseDown(sender, new(MouseButtons.Left, 1, 45, 45, 0));
                     break;
                 case Keys.NumPad0 or Keys.D0:
-                    btnReturn.PerformClick();
+                    btnReturn_MouseDown(sender, new(MouseButtons.Left, 1, 45, 45, 0));
                     break;
                 case Keys.Enter:
                     btnReset.PerformClick();
                     break;
-
             }
         }
     }

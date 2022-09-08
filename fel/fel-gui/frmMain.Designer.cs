@@ -43,6 +43,17 @@ namespace fel_gui
             this.lblTotal = new System.Windows.Forms.Label();
             this.lstResume = new System.Windows.Forms.ListBox();
             this.btnReturn = new System.Windows.Forms.Button();
+            this.lbl1 = new System.Windows.Forms.Label();
+            this.lbl2 = new System.Windows.Forms.Label();
+            this.lbl5 = new System.Windows.Forms.Label();
+            this.lbl6 = new System.Windows.Forms.Label();
+            this.lbl3 = new System.Windows.Forms.Label();
+            this.lbl4 = new System.Windows.Forms.Label();
+            this.lbl7 = new System.Windows.Forms.Label();
+            this.lbl8 = new System.Windows.Forms.Label();
+            this.lbl9 = new System.Windows.Forms.Label();
+            this.lbl0 = new System.Windows.Forms.Label();
+            this.lblEnter = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnSoup
@@ -202,11 +213,121 @@ namespace fel_gui
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnReturn_MouseDown);
             // 
+            // lbl1
+            // 
+            this.lbl1.AutoSize = true;
+            this.lbl1.Location = new System.Drawing.Point(166, 53);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(13, 15);
+            this.lbl1.TabIndex = 24;
+            this.lbl1.Text = "1";
+            // 
+            // lbl2
+            // 
+            this.lbl2.AutoSize = true;
+            this.lbl2.Location = new System.Drawing.Point(384, 53);
+            this.lbl2.Name = "lbl2";
+            this.lbl2.Size = new System.Drawing.Size(13, 15);
+            this.lbl2.TabIndex = 25;
+            this.lbl2.Text = "2";
+            // 
+            // lbl5
+            // 
+            this.lbl5.AutoSize = true;
+            this.lbl5.Location = new System.Drawing.Point(604, 53);
+            this.lbl5.Name = "lbl5";
+            this.lbl5.Size = new System.Drawing.Size(13, 15);
+            this.lbl5.TabIndex = 26;
+            this.lbl5.Text = "5";
+            // 
+            // lbl6
+            // 
+            this.lbl6.AutoSize = true;
+            this.lbl6.Location = new System.Drawing.Point(822, 53);
+            this.lbl6.Name = "lbl6";
+            this.lbl6.Size = new System.Drawing.Size(13, 15);
+            this.lbl6.TabIndex = 27;
+            this.lbl6.Text = "6";
+            // 
+            // lbl3
+            // 
+            this.lbl3.AutoSize = true;
+            this.lbl3.Location = new System.Drawing.Point(166, 253);
+            this.lbl3.Name = "lbl3";
+            this.lbl3.Size = new System.Drawing.Size(13, 15);
+            this.lbl3.TabIndex = 28;
+            this.lbl3.Text = "3";
+            // 
+            // lbl4
+            // 
+            this.lbl4.AutoSize = true;
+            this.lbl4.Location = new System.Drawing.Point(384, 253);
+            this.lbl4.Name = "lbl4";
+            this.lbl4.Size = new System.Drawing.Size(13, 15);
+            this.lbl4.TabIndex = 29;
+            this.lbl4.Text = "4";
+            // 
+            // lbl7
+            // 
+            this.lbl7.AutoSize = true;
+            this.lbl7.Location = new System.Drawing.Point(604, 253);
+            this.lbl7.Name = "lbl7";
+            this.lbl7.Size = new System.Drawing.Size(13, 15);
+            this.lbl7.TabIndex = 30;
+            this.lbl7.Text = "7";
+            // 
+            // lbl8
+            // 
+            this.lbl8.AutoSize = true;
+            this.lbl8.Location = new System.Drawing.Point(822, 253);
+            this.lbl8.Name = "lbl8";
+            this.lbl8.Size = new System.Drawing.Size(13, 15);
+            this.lbl8.TabIndex = 31;
+            this.lbl8.Text = "8";
+            // 
+            // lbl9
+            // 
+            this.lbl9.AutoSize = true;
+            this.lbl9.Location = new System.Drawing.Point(166, 455);
+            this.lbl9.Name = "lbl9";
+            this.lbl9.Size = new System.Drawing.Size(13, 15);
+            this.lbl9.TabIndex = 32;
+            this.lbl9.Text = "9";
+            // 
+            // lbl0
+            // 
+            this.lbl0.AutoSize = true;
+            this.lbl0.Location = new System.Drawing.Point(822, 455);
+            this.lbl0.Name = "lbl0";
+            this.lbl0.Size = new System.Drawing.Size(13, 15);
+            this.lbl0.TabIndex = 33;
+            this.lbl0.Text = "0";
+            // 
+            // lblEnter
+            // 
+            this.lblEnter.AutoSize = true;
+            this.lblEnter.Location = new System.Drawing.Point(800, 575);
+            this.lblEnter.Name = "lblEnter";
+            this.lblEnter.Size = new System.Drawing.Size(34, 15);
+            this.lblEnter.TabIndex = 34;
+            this.lblEnter.Text = "Enter";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(888, 671);
+            this.Controls.Add(this.lblEnter);
+            this.Controls.Add(this.lbl0);
+            this.Controls.Add(this.lbl9);
+            this.Controls.Add(this.lbl8);
+            this.Controls.Add(this.lbl7);
+            this.Controls.Add(this.lbl4);
+            this.Controls.Add(this.lbl3);
+            this.Controls.Add(this.lbl6);
+            this.Controls.Add(this.lbl5);
+            this.Controls.Add(this.lbl2);
+            this.Controls.Add(this.lbl1);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.lstResume);
             this.Controls.Add(this.lblTotal);
@@ -245,6 +366,17 @@ namespace fel_gui
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.ListBox lstResume;
         private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.Label lbl1;
+        private System.Windows.Forms.Label lbl2;
+        private System.Windows.Forms.Label lbl5;
+        private System.Windows.Forms.Label lbl6;
+        private System.Windows.Forms.Label lbl3;
+        private System.Windows.Forms.Label lbl4;
+        private System.Windows.Forms.Label lbl7;
+        private System.Windows.Forms.Label lbl8;
+        private System.Windows.Forms.Label lbl9;
+        private System.Windows.Forms.Label lbl0;
+        private System.Windows.Forms.Label lblEnter;
     }
 }
 
