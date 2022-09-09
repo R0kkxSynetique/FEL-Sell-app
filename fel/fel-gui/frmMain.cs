@@ -306,7 +306,32 @@ namespace fel_gui
 
         private void frmMain_HelpButtonClicked(object sender, CancelEventArgs e)
         {
-            MessageBox.Show("Cette application est déstinée à être utilisée lors de l'événement \"Fête au lac\" pour l\'association \"l\'écaille\".", "Info de l\'application", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            double total = 0;
+            double returnTotal = 0;
+
+            List<Items> items = new List<Items>();
+
+            string json = File.ReadAllText(Filename);
+            dynamic jsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
+
+            foreach (dynamic obj in jsonObj)
+            {
+                total += (int)obj["Quantity"] * (int)obj["Price"];
+                returnTotal += (int)obj["Quantity"] * (int)obj["Deposit"];
+                Items item = new((double)obj["Price"], (string)obj["Name"], (double)obj["Deposit"], (int)obj["Quantity"]);
+                items.Add(item);
+            }
+
+            MessageBox.Show("Le chiffre d'affaire est de: " + total + 
+                "\nLes sorties dû aux consignes est de: " + returnTotal + 
+                "\nLe nombre de soupes de poisson vendues est de: " + items[0].Quantity +
+                "\nLe nombre de salade de brochet vendues est de: " + items[1].Quantity +
+                "\nLe nombre de friture de sandre vendues est de: " + items[2].Quantity +
+                "\nLe nombre de bondelle fumée vendues est de: " + items[3].Quantity +
+                "\nLe nombre de bouteille de vin vendues est de: " + items[4].Quantity +
+                "\nLe nombre de bière vendues est de: " + items[5].Quantity +
+                "\nLe nombre de minérales vendues est de: " + items[6].Quantity +
+                "\nLe nombre de cafés/thés vendu est de: " + items[7].Quantity, "Total chiffre d'affaire", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

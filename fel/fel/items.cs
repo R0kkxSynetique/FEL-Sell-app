@@ -33,6 +33,7 @@ namespace fel
             _price = Price;
             _name = Name;
             _deposit = Deposit;
+            _quantity = Quantity;
         }
     }
 }
