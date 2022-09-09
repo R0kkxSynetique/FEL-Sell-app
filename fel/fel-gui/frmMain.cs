@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
+using System.Xml.Linq;
 using fel;
+using Newtonsoft.Json;
+using static System.Windows.Forms.Design.AxImporter;
 
 namespace fel_gui
 {
@@ -25,6 +30,9 @@ namespace fel_gui
         public Drinks Coffee = new(2, "Café, thé", 0, 0);
         public Items Glass = new(2, "Verre", 0, 0);
         public Food Plate = new(-2, "Consigne", 0, new List<string> { "2.- les verres et les plats standard\n4.- pour les plats de Bondelle (appuyer 2x)" }, 0);
+
+        public static string Filename = @"./json/allTransactions.json";
+        public static string JsonDirectory = @"./json";
 
         public frmMain()
         {
@@ -75,8 +83,42 @@ namespace fel_gui
             txtTotal.Text = Cart.CalculateTotal().ToString();
         }
 
+        public void UpdateJson()
+        {
+            string json = File.ReadAllText(Filename);
+            dynamic jsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
+            for (int i = 0; i < 10; i++)
+            {
+                jsonObj[i]["Quantity"] += Cart.Cart[i].Quantity;
+
+            }
+            string output = Newtonsoft.Json.JsonConvert.SerializeObject(jsonObj, Newtonsoft.Json.Formatting.Indented);
+            File.WriteAllText(Filename, output);
+        }
+
+        public static void PrettyWrite(List<Items> items)
+        {
+            if (!Directory.Exists(JsonDirectory))
+            {
+                Directory.CreateDirectory(JsonDirectory);
+            }
+            using (StreamWriter file = File.CreateText(Filename))
+            {
+                JsonSerializer serializer = new JsonSerializer();
+                serializer.Serialize(file, items);
+            }
+        }
+
         private void btnReset_Click(object sender, EventArgs e)
         {
+            if(!File.Exists(Filename))
+            {
+                PrettyWrite(Cart.Cart);
+            }
+            else
+            {
+                UpdateJson();
+            }
             foreach (Items items in Cart.Cart)
             {
                 items.Quantity = 0;
@@ -264,7 +306,7 @@ namespace fel_gui
 
         private void frmMain_HelpButtonClicked(object sender, CancelEventArgs e)
         {
-            MessageBox.Show("asd", "asd", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Cette application est déstinée à être utilisée lors de l'événement \"Fête au lac\" pour l\'association \"l\'écaille\".", "Info de l\'application", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
