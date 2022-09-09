@@ -182,43 +182,89 @@ namespace fel_gui
 
         private void frmMain_KeyDown(object sender, KeyEventArgs e)
         {
-            switch (e.KeyCode)
+            if (e.Modifiers == Keys.Control || e.Modifiers == Keys.Alt)
             {
-                case Keys.NumPad1 or Keys.D1:
-                    btnSoup_MouseDown(sender, new(MouseButtons.Left, 1, 0, 0, 0));
-                    break;
-                case Keys.NumPad2 or Keys.D2:
-                    btnSalade_MouseDown(sender, new(MouseButtons.Left, 1, 0, 0, 0));
-                    break;
-                case Keys.NumPad3 or Keys.D3:
-                    btnFrying_MouseDown(sender, new(MouseButtons.Left, 1, 45, 45, 0));
-                    break;
-                case Keys.NumPad4 or Keys.D4:
-                    btnSmokedFish_MouseDown(sender, new(MouseButtons.Left, 1, 45, 45, 0));
-                    break;
-                case Keys.NumPad5 or Keys.D5:
-                    btnWine_MouseDown(sender, new(MouseButtons.Left, 1, 45, 45, 0));
-                    break;
-                case Keys.NumPad6 or Keys.D6:
-                    btnBeer_MouseDown(sender, new(MouseButtons.Left, 1, 45, 45, 0));
-                    break;
-                case Keys.NumPad7 or Keys.D7:
-                    btnMineral_MouseDown(sender, new(MouseButtons.Left, 1, 45, 45, 0));
-                    break;
-                case Keys.NumPad8 or Keys.D8:
-                    btnCoffee_MouseDown(sender, new(MouseButtons.Left, 1, 45, 45, 0));
-                    break;
-                case Keys.NumPad9 or Keys.D9:
-                    btnGlass_MouseDown(sender, new(MouseButtons.Left, 1, 45, 45, 0));
-                    break;
-                case Keys.NumPad0 or Keys.D0:
-                    btnReturn_MouseDown(sender, new(MouseButtons.Left, 1, 45, 45, 0));
-                    break;
-                case Keys.Enter:
-                    btnReset.PerformClick();
-                    break;
+                switch (e.KeyCode)
+                {
+                    case Keys.NumPad1 or Keys.D1:
+                        btnSoup_MouseDown(sender, new(MouseButtons.Right, 1, 0, 0, 0));
+                        break;
+                    case Keys.NumPad2 or Keys.D2:
+                        btnSalade_MouseDown(sender, new(MouseButtons.Right, 1, 0, 0, 0));
+                        break;
+                    case Keys.NumPad3 or Keys.D3:
+                        btnFrying_MouseDown(sender, new(MouseButtons.Right, 1, 45, 45, 0));
+                        break;
+                    case Keys.NumPad4 or Keys.D4:
+                        btnSmokedFish_MouseDown(sender, new(MouseButtons.Right, 1, 45, 45, 0));
+                        break;
+                    case Keys.NumPad5 or Keys.D5:
+                        btnWine_MouseDown(sender, new(MouseButtons.Right, 1, 45, 45, 0));
+                        break;
+                    case Keys.NumPad6 or Keys.D6:
+                        btnBeer_MouseDown(sender, new(MouseButtons.Right, 1, 45, 45, 0));
+                        break;
+                    case Keys.NumPad7 or Keys.D7:
+                        btnMineral_MouseDown(sender, new(MouseButtons.Right, 1, 45, 45, 0));
+                        break;
+                    case Keys.NumPad8 or Keys.D8:
+                        btnCoffee_MouseDown(sender, new(MouseButtons.Right, 1, 45, 45, 0));
+                        break;
+                    case Keys.NumPad9 or Keys.D9:
+                        btnGlass_MouseDown(sender, new(MouseButtons.Right, 1, 45, 45, 0));
+                        break;
+                    case Keys.NumPad0 or Keys.D0:
+                        btnReturn_MouseDown(sender, new(MouseButtons.Right, 1, 45, 45, 0));
+                        break;
+                    case Keys.Enter:
+                        btnReset.PerformClick();
+                        break;
+                }
+            }
+            else
+            {
+                switch (e.KeyCode)
+                {
+                    case Keys.NumPad1 or Keys.D1:
+                        btnSoup_MouseDown(sender, new(MouseButtons.Left, 1, 0, 0, 0));
+                        break;
+                    case Keys.NumPad2 or Keys.D2:
+                        btnSalade_MouseDown(sender, new(MouseButtons.Left, 1, 0, 0, 0));
+                        break;
+                    case Keys.NumPad3 or Keys.D3:
+                        btnFrying_MouseDown(sender, new(MouseButtons.Left, 1, 45, 45, 0));
+                        break;
+                    case Keys.NumPad4 or Keys.D4:
+                        btnSmokedFish_MouseDown(sender, new(MouseButtons.Left, 1, 45, 45, 0));
+                        break;
+                    case Keys.NumPad5 or Keys.D5:
+                        btnWine_MouseDown(sender, new(MouseButtons.Left, 1, 45, 45, 0));
+                        break;
+                    case Keys.NumPad6 or Keys.D6:
+                        btnBeer_MouseDown(sender, new(MouseButtons.Left, 1, 45, 45, 0));
+                        break;
+                    case Keys.NumPad7 or Keys.D7:
+                        btnMineral_MouseDown(sender, new(MouseButtons.Left, 1, 45, 45, 0));
+                        break;
+                    case Keys.NumPad8 or Keys.D8:
+                        btnCoffee_MouseDown(sender, new(MouseButtons.Left, 1, 45, 45, 0));
+                        break;
+                    case Keys.NumPad9 or Keys.D9:
+                        btnGlass_MouseDown(sender, new(MouseButtons.Left, 1, 45, 45, 0));
+                        break;
+                    case Keys.NumPad0 or Keys.D0:
+                        btnReturn_MouseDown(sender, new(MouseButtons.Left, 1, 45, 45, 0));
+                        break;
+                    case Keys.Enter:
+                        btnReset.PerformClick();
+                        break;
+                }
             }
         }
 
+        private void frmMain_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            MessageBox.Show("asd", "asd", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

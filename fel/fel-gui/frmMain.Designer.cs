@@ -54,6 +54,7 @@ namespace fel_gui
             this.lbl9 = new System.Windows.Forms.Label();
             this.lbl0 = new System.Windows.Forms.Label();
             this.lblEnter = new System.Windows.Forms.Label();
+            this.hlpMain = new System.Windows.Forms.HelpProvider();
             this.SuspendLayout();
             // 
             // btnSoup
@@ -342,8 +343,16 @@ namespace fel_gui
             this.Controls.Add(this.btnWine);
             this.Controls.Add(this.btnSalade);
             this.Controls.Add(this.btnSoup);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.HelpButton = true;
+            this.hlpMain.SetHelpKeyword(this, "");
+            this.hlpMain.SetHelpString(this, "");
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmMain";
-            this.Text = "frmMain";
+            this.hlpMain.SetShowHelp(this, true);
+            this.Text = "Fête au lac - Vente";
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.frmMain_HelpButtonClicked);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmMain_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -377,6 +386,7 @@ namespace fel_gui
         private System.Windows.Forms.Label lbl9;
         private System.Windows.Forms.Label lbl0;
         private System.Windows.Forms.Label lblEnter;
+        private System.Windows.Forms.HelpProvider hlpMain;
     }
 }
 
