@@ -311,6 +311,11 @@ namespace fel_gui
 
             List<Items> items = new List<Items>();
 
+            if (!File.Exists(Filename))
+            {
+                PrettyWrite(Cart.Cart);
+            }
+
             string json = File.ReadAllText(Filename);
             dynamic jsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
 
