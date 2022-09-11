@@ -55,6 +55,8 @@ namespace fel_gui
             this.lbl0 = new System.Windows.Forms.Label();
             this.lblEnter = new System.Windows.Forms.Label();
             this.hlpMain = new System.Windows.Forms.HelpProvider();
+            this.btnWineGlass = new System.Windows.Forms.Button();
+            this.lblSpace = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnSoup
@@ -313,11 +315,34 @@ namespace fel_gui
             this.lblEnter.TabIndex = 34;
             this.lblEnter.Text = "Enter";
             // 
+            // btnWineGlass
+            // 
+            this.btnWineGlass.BackColor = System.Drawing.Color.Red;
+            this.btnWineGlass.Location = new System.Drawing.Point(476, 199);
+            this.btnWineGlass.Name = "btnWineGlass";
+            this.btnWineGlass.Size = new System.Drawing.Size(150, 39);
+            this.btnWineGlass.TabIndex = 35;
+            this.btnWineGlass.TabStop = false;
+            this.btnWineGlass.Text = "Verre de vin (1dl)";
+            this.btnWineGlass.UseVisualStyleBackColor = false;
+            this.btnWineGlass.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnWineGlass_MouseDown);
+            // 
+            // lblSpace
+            // 
+            this.lblSpace.AutoSize = true;
+            this.lblSpace.Location = new System.Drawing.Point(588, 199);
+            this.lblSpace.Name = "lblSpace";
+            this.lblSpace.Size = new System.Drawing.Size(38, 15);
+            this.lblSpace.TabIndex = 36;
+            this.lblSpace.Text = "Space";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(888, 671);
+            this.Controls.Add(this.lblSpace);
+            this.Controls.Add(this.btnWineGlass);
             this.Controls.Add(this.lblEnter);
             this.Controls.Add(this.lbl0);
             this.Controls.Add(this.lbl9);
@@ -387,6 +412,8 @@ namespace fel_gui
         private System.Windows.Forms.Label lbl0;
         private System.Windows.Forms.Label lblEnter;
         private System.Windows.Forms.HelpProvider hlpMain;
+        private System.Windows.Forms.Button btnWineGlass;
+        private System.Windows.Forms.Label lblSpace;
     }
 }
 
