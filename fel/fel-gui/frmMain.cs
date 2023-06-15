@@ -21,14 +21,14 @@ namespace fel_gui
         public Carts Cart;
 
         public Food Soup = new(7.0, "Soupe de poisson", 2.0, new List<string> { "Brochet", "palée", "perche", "truite", "vengerons", "Céleri", "Beurre", "carrotes", "poireau", "fenouil", "oignon", "ail", "pomme-de-terre", "persil", "cerfeuil", "livèche", "aneth", "piment d'espelette", "Laurier", "Thym", "Clou de girofle", "Poiveron", "huile d'olive" }, 0);
-        public Food Salade = new(7.0, "Salade de brochet", 2.0, new List<string> { "Brochet", "Huile", "Vinaigre", "Moutarde", "Sauce Chilli", "Ketchup", "Persil", "Échalotes" }, 0);
+        public Food Salade = new(8.0, "Salade de brochet", 2.0, new List<string> { "Brochet", "Huile", "Vinaigre", "Moutarde", "Sauce Chilli", "Ketchup", "Persil", "Échalotes" }, 0);
         public Food Frying = new(15, "Friture de sandre", 2.0, new List<string> { "Sandre" }, 0);
-        public Food SmokedFish = new(15, "Bondelle fumée", 4.0, new List<string> { "Bondelle" }, 0);
-        public Drinks Wine = new(15.0, "Vin(Blanc, rouge, rosé)", 0, 0);
-        public Drinks Minerals = new(3.0, "Minérales(Pepsi, thé froid, eau)", 0, 0);
+        //public Food SmokedFish = new(15, "Bondelle fumée", 4.0, new List<string> { "Bondelle" }, 0);
+        public Drinks Wine = new(18.0, "Vin(Blanc, rouge, rosé)", 0, 0);
+        public Drinks Minerals = new(4.0, "Minérales(Pepsi, thé froid, eau)", 0, 0);
         public Drinks Beer = new(4.0, "Bière(Boxer)", 0, 0);
         public Drinks Coffee = new(2, "Café, thé", 0, 0);
-        public Drinks WineGlass = new(3, "Ballon de vin(Blanc, rouge, rosé)", 2, 0);
+        public Drinks WineGlass = new(4, "Ballon de vin(Blanc, rouge, rosé)", 2, 0);
         public Items Glass = new(2, "Verre", 0, 0);
         public Food Plate = new(-2, "Consigne", 0, new List<string> { "2.- les verres et les plats standard\n4.- pour les plats de Bondelle (appuyer 2x)" }, 0);
 
@@ -37,7 +37,7 @@ namespace fel_gui
 
         public frmMain()
         {
-            Cart = new(new List<Items> { Soup, Salade, Frying, SmokedFish, Wine, WineGlass, Minerals, Beer, Coffee, Glass, Plate });
+            Cart = new(new List<Items> { Soup, Salade, Frying, Wine, WineGlass, Minerals, Beer, Coffee, Glass, Plate });
             InitializeComponent();
         }
 
@@ -200,7 +200,7 @@ namespace fel_gui
 
         private void btnSmokedFish_MouseDown(object sender, MouseEventArgs e)
         {
-            mouseDownHandler(e, SmokedFish);
+            mouseDownHandler(e, WineGlass);
         }
 
         private void btnMineral_MouseDown(object sender, MouseEventArgs e)
@@ -243,7 +243,7 @@ namespace fel_gui
                         btnFrying_MouseDown(sender, new(MouseButtons.Right, 1, 0, 0, 0));
                         break;
                     case Keys.NumPad4 or Keys.D4:
-                        btnSmokedFish_MouseDown(sender, new(MouseButtons.Right, 1, 0, 0, 0));
+                        btnWineGlass_MouseDown(sender, new(MouseButtons.Right, 1, 0, 0, 0));
                         break;
                     case Keys.NumPad5 or Keys.D5:
                         btnWine_MouseDown(sender, new(MouseButtons.Right, 1, 0, 0, 0));
@@ -285,7 +285,7 @@ namespace fel_gui
                         btnFrying_MouseDown(sender, new(MouseButtons.Left, 1, 0, 0, 0));
                         break;
                     case Keys.NumPad4 or Keys.D4:
-                        btnSmokedFish_MouseDown(sender, new(MouseButtons.Left, 1, 0, 0, 0));
+                        btnWineGlass_MouseDown(sender, new(MouseButtons.Left, 1, 0, 0, 0));
                         break;
                     case Keys.NumPad5 or Keys.D5:
                         btnWine_MouseDown(sender, new(MouseButtons.Left, 1, 0, 0, 0));
@@ -343,12 +343,11 @@ namespace fel_gui
                 "\nLe nombre de soupes de poisson vendues est de: " + items[0].Quantity +
                 "\nLe nombre de salade de brochet vendues est de: " + items[1].Quantity +
                 "\nLe nombre de friture de sandre vendues est de: " + items[2].Quantity +
-                "\nLe nombre de bondelle fumée vendues est de: " + items[3].Quantity +
-                "\nLe nombre de bouteille de vin vendues est de: " + items[4].Quantity +
-                "\nLe nombre de verre de vin vendus est de: " + items[5].Quantity +
-                "\nLe nombre de bière vendues est de: " + items[6].Quantity +
-                "\nLe nombre de minérales vendues est de: " + items[7].Quantity +
-                "\nLe nombre de cafés/thés vendu est de: " + items[8].Quantity, "Total chiffre d'affaire", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                "\nLe nombre de bouteille de vin vendues est de: " + items[3].Quantity +
+                "\nLe nombre de verre de vin vendus est de: " + items[4].Quantity +
+                "\nLe nombre de bière vendues est de: " + items[5].Quantity +
+                "\nLe nombre de minérales vendues est de: " + items[6].Quantity +
+                "\nLe nombre de cafés/thés vendu est de: " + items[7].Quantity, "Total chiffre d'affaire", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

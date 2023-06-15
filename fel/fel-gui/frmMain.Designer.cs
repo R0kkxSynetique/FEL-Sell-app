@@ -121,13 +121,13 @@ namespace fel_gui
             // 
             // btnSmokedFish
             // 
-            this.btnSmokedFish.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnSmokedFish.BackColor = System.Drawing.Color.Red;
             this.btnSmokedFish.Location = new System.Drawing.Point(256, 244);
             this.btnSmokedFish.Name = "btnSmokedFish";
             this.btnSmokedFish.Size = new System.Drawing.Size(150, 150);
             this.btnSmokedFish.TabIndex = 5;
             this.btnSmokedFish.TabStop = false;
-            this.btnSmokedFish.Text = "Bondelle fumée";
+            this.btnSmokedFish.Text = "Verre de vin (1 dl)";
             this.btnSmokedFish.UseVisualStyleBackColor = false;
             this.btnSmokedFish.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnSmokedFish_MouseDown);
             // 
